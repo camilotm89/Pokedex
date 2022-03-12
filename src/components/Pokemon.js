@@ -5,11 +5,11 @@ const Pokemon = (props) => {
     return(
         <div className='container'>
             <div className='shadow p-3 mb-5 bg-body rounded'>
-                <div className='pokemon-img-container'>
+                <div className='pokemon-img-container d-flex align-items-center justify-content-center'>
                     <img 
                         src= {pokemon.sprites.front_default} 
                         alt= {pokemon.name} 
-                        className='card-img-top pokemon-img'
+                        className='card-img-top pokemon-img '
                     />
                 </div>
                 <div className='card-body'>
