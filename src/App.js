@@ -5,14 +5,16 @@ import Searchbar from "./components/Searchbar";
 import Pokedex from "./components/Pokedex";
 import { getPokemonData, getPokemons } from "./api";
 import Pokemon from "./components/Pokemon";
+import { FavoriteProvider } from "./contexts/favoritesContext";
 
 const {useState, useEffect} = React;
 
 export default function App() {
   const [pokemons, setPokemons] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [favorites, setFavorites] = useState([]);
 
   const fetchPokemons = async () => {
     try{
@@ -32,22 +34,36 @@ export default function App() {
     fetchPokemons();
   },[page]);
 
+  const updateFavoritePokemons = (name) => {
+    const updated = [...favorites];
+    const isFavorite = favorites.indexOf(name);
+    if(isFavorite >=0){
+      updated.splice(isFavorite, 1);
+    } else{
+      updated.push(name);
+    }
+    setFavorites(updated);
+  }
+
   return (
+    <FavoriteProvider 
+    value={{
+      favoritePokemons: favorites, 
+      updateFavoritePokemons: updateFavoritePokemons
+      }}>
     <div>
       <Navbar/>
       <div className="App">
         <Searchbar />
-        {
-          loading ? <div>Cargando... </div>
-          :
           <Pokedex 
-          pokemons={pokemons} 
-          page={page}
-          setPage={setPage}
-          total={total}
+            loading={loading}
+            pokemons={pokemons} 
+            page={page}
+            setPage={setPage}
+            total={total}
           />
-}
       </div>
     </div>
+    </FavoriteProvider>
   );
 }

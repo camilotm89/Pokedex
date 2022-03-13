@@ -1,6 +1,11 @@
 import React from 'react';
+import FavoriteConext from '../contexts/favoritesContext';
+
+const {useContext} = React;
 
 const Navbar = () =>  {
+    const {favoritePokemons} = useContext(FavoriteConext);
+
     return (
     <nav>
         <div>
@@ -11,7 +16,7 @@ const Navbar = () =>  {
             className="navbar-image"
         />
         </div>
-        <div> ❤️ </div>
+        <div> ❤️ { favoritePokemons.length} </div>
     </nav>
     );
 };

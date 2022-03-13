@@ -3,7 +3,7 @@ import Pagination from "./Pagination";
 import Pokemon from "./Pokemon";
 
 const Pokedex = (props) => {
-    const {pokemons, page, setPage, total} = props;
+    const {pokemons, page, setPage, total, loading} = props;
 
     const lastPage = () => {
         const nextPage = Math.max(page - 1, 0);
@@ -27,6 +27,8 @@ const Pokedex = (props) => {
                     onRightClick={nextPage}
                 />
             </div>
+            {loading ?
+            <div className="text-center">cargando...</div> :
             <div className="pokedex-grid">
                 {pokemons.map((pokemon, idx) => {
                     return(
@@ -34,6 +36,7 @@ const Pokedex = (props) => {
                     )
                 })}
             </div>
+}
         </div>
     );
 };
