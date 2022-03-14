@@ -35,8 +35,17 @@ const Pokedex = (props) => {
                         <Pokemon pokemon={pokemon} key= {pokemon.name}/>
                     )
                 })}
+                
             </div>
-}
+            }
+            <div className="text-center">
+                    <Pagination 
+                        page={page + 1} 
+                        totalPages={total}
+                        onLeftClick={lastPage}
+                        onRightClick={nextPage}
+                    />
+                </div>
         </div>
     );
 };

@@ -54,6 +54,19 @@ nav {
     padding: 10px;
 }
 
+.page-button{
+    background-color: gray;
+    outline: none;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+}
+
+.page-button button{
+    border-radius: 10px;
+    border-color: rgba(0, 0, 0, 0.329);
+}
+
 .pokedex-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -117,3 +130,15 @@ nav {
     font-family: sans-serif;
 
 }
+
+@media screen and (max-width: 992px) {
+    .pokedex-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .pokedex-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
