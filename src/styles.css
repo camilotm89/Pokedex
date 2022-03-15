@@ -8,6 +8,12 @@ nav {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+
+}
+
+.nav-header {
+    background-color: #8d9bd6;
+
 }
 
 .navbar-image{
@@ -17,6 +23,7 @@ nav {
 .searchbar-container{
     display: flex;
     margin: 0px auto;
+    margin-top: 20px;
     padding: 0 20px;
     align-items: center;
 }
@@ -52,6 +59,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+
 }
 
 .page-button{
@@ -94,6 +102,15 @@ nav {
     text-transform: capitalize;
 }
 
+.type-item {
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 60px;
+    border-width: 1px;
+
+}
+
 .pokemon-img-container{
     padding: 0px 5px;
     text-align: center;
@@ -118,9 +135,7 @@ nav {
     align-items: center;
 }
 
-.card-bottom{
 
-}
 
 .card-top h3 {
     text-transform: capitalize;

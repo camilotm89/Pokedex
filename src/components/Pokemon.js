@@ -33,12 +33,12 @@ const Pokemon = (props) => {
                         <div className='pokemon-type'>
                             {pokemon.types.map((type, idx) => {
                                 return (
-                                <div key={idx}>{type.type.name}</div>
+                                <div className='type-item' key={idx}>{type.type.name}</div>
                                 );
                                 
                             })}
                         </div>
-                        <button onClick={clickHeart} className='btn btn-outline-dark'>
+                        <button onClick={clickHeart} className='btn favorite-btn'>
                             <div className='pokemon-favorite'> {heart} </div>
                         </button>
                     </div>

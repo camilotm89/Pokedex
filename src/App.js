@@ -28,6 +28,7 @@ export default function App() {
       setPokemons(results);
       setLoading(false);
       setTotal(Math.ceil(data.count / 15))
+      setNotFound(false);
     }catch(err){}
   };
 

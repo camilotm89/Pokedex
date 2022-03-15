@@ -7,7 +7,7 @@ const Navbar = () =>  {
     const {favoritePokemons} = useContext(FavoriteConext);
 
     return (
-    <nav>
+    <nav className='nav-header'>
         <div>
         </div>
         <div>
