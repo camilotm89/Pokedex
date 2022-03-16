@@ -119,6 +119,10 @@ nav {
 
 }
 
+.type-fire{
+    background-color: salmon;
+}
+
 .card-body{
     display: flex;
     flex-direction: column;

@@ -1,5 +1,6 @@
 import React from 'react';
-import { useContext } from 'react/cjs/react.development';
+//import { useContext } from 'react/cjs/react.development';
+import { useContext } from 'react';
 import FavoriteConext from '../contexts/favoritesContext';
 
 const Pokemon = (props) => {
@@ -34,8 +35,9 @@ const Pokemon = (props) => {
                             {pokemon.types.map((type, idx) => {
                                 return (
                                 <div className='type-item' key={idx}>{type.type.name}</div>
-                                );
                                 
+                                );
+                                //{pokemon.types[0].type.name}
                             })}
                         </div>
                         <button onClick={clickHeart} className='btn favorite-btn'>
