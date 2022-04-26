@@ -29,15 +29,14 @@ const Pokedex = (props) => {
             </div>
             {loading ?
             <div className="text-center">cargando...</div> :
+            <div>
             <div className="pokedex-grid">
                 {pokemons.map((pokemon, idx) => {
                     return(
                         <Pokemon pokemon={pokemon} key= {pokemon.name}/>
                     )
                 })}
-                
-            </div>
-            }
+               </div> 
             <div className="text-center">
                     <Pagination 
                         page={page + 1} 
@@ -46,6 +45,8 @@ const Pokedex = (props) => {
                         onRightClick={nextPage}
                     />
                 </div>
+            </div>
+            }
         </div>
     );
 };

@@ -14,6 +14,7 @@ const Pokemon = (props) => {
     const clickHeart = (e) => {
         e.preventDefault();
         updateFavoritePokemons(pokemon.name);
+        console.log(favoritePokemons);
     }
     return(
         <div className='container'>
